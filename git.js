@@ -41,6 +41,10 @@ git log
     geçiş bölgesi
     git reposu
 
+//Git İş Akışı
+    git bölümleri:çalışma dizini, geçiş bölgesi(gözden geçir) ve git deposu.
+    working directory-add->staging area-commit->git repository
+    kırmızı-yeşil-yok
 
 
 
