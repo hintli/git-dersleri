@@ -25,12 +25,21 @@
 
 //Commit & Log
 proje dosyalarını git repository ' ye (git deposuna) eklemeyi  gerçekleştiriyoruz. Komutlar şu şekilde :
-git add .
-git commit -m "mesaj"
+git add . //stacing area dediğimiz geçiş bölgesinde
+git commit -m "mesaj" //şimdi git deposunda
 
 Aldığımız versiyonların tamamını listelemek için şu komutu çalıştırıyoruz:
 git log
 
+//Status
+    git projemize dosyalar ekleyerek birden fazla versiyonlar alıcaz
+    git projelerimizdeki değişimleri gösteren status komutunu işliycez
+    master->şuanki bulunduğumuz proje adı
+    git status//değişiklikleri göster -çalışma dizini, git reposu farkı
+
+    çalışma dizini
+    geçiş bölgesi
+    git reposu
 
 
 
