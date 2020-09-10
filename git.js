@@ -46,7 +46,12 @@ git log
     working directory-add->staging area-commit->git repository
     kırmızı-yeşil-yok
 
+//Diff & Değişiklikler
+    dosydaki değişimleri satır satır inceliyoruz."git diff" komutuyla inceliyoruz.
+    git diff main.py//sadece bu dosyalardaki 
 
+    git diff//çalışma dizini ile git deposu arasındaki farklılıkları
+    git diff --staged//staging area ile git repository arasındaki farklılıklar
 
 
 */
