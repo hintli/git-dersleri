@@ -1,0 +1,171 @@
+/*
+//Git Nedir?
+    versiyonun ismi
+    tarih 
+    kullanıcı
+
+    versiyon2den versiyon1 e dönmek istediğimizde 
+    git işimizi görür
+
+//Linux Kurulum 
+    sudo apt-get install git
+
+//Git Yapılandırılması
+    kullanıcı adı ve mail tanıtma
+    git config --global user.name "kullanıcı adınız"
+    git config --global user.email "email adresiniz"
+
+    --global //bu sistemdeki kullanıcı
+
+//Git Projesi Oluşturma
+    Git projesi oluşturmak için şu komutu kullanmanız yeterli ;
+    git init
+    Oluşturduğunuz gizli git dosyalarını listelemek için şu komutu çalıştırabilirsiniz:
+    ls -a
+
+//Commit & Log
+proje dosyalarını git repository ' ye (git deposuna) eklemeyi  gerçekleştiriyoruz. Komutlar şu şekilde :
+git add . //stacing area dediğimiz geçiş bölgesinde
+git commit -m "mesaj" //şimdi git deposunda
+
+Aldığımız versiyonların tamamını listelemek için şu komutu çalıştırıyoruz:
+git log
+
+//Status
+    git projemize dosyalar ekleyerek birden fazla versiyonlar alıcaz
+    git projelerimizdeki değişimleri gösteren status komutunu işliycez
+    master->şuanki bulunduğumuz proje adı
+    git status//değişiklikleri göster -çalışma dizini, git reposu farkı
+
+    çalışma dizini
+    geçiş bölgesi
+    git reposu
+
+//Git İş Akışı
+    git bölümleri:çalışma dizini, geçiş bölgesi(gözden geçir) ve git deposu.
+    working directory-add->staging area-commit->git repository
+    kırmızı-yeşil-yok
+
+//Diff & Değişiklikler
+    dosydaki değişimleri satır satır inceliyoruz."git diff" komutuyla inceliyoruz.
+    git diff main.py//sadece bu dosyalardaki 
+
+    git diff//çalışma dizini ile git deposu arasındaki farklılıkları
+    git diff --staged//staging area ile git repository arasındaki farklılıklar
+
+//Dosya Silme (rm)
+    el ile silmek
+    rm ile silmek
+    rm -r //klasör silme recursive
+
+//Dosya İsimlendirme & Taşıma (mv)
+dosya isimlendirme ve dosya dizini değiştirme
+    isim değiştirme:
+    manuel
+    git komutu git mv a.txt b.txt //commit et
+
+    taşıma
+    git mv a.txt dosyalar/  //commit et
+    copy ctrl+shift+c
+
+//Değişikliği Geri Alma (Çalışma Dizini)
+    git checkout -- index.js //silinendede aynısı
+
+//Değişikliği Geri Alma (Geçiş Bölgesi)
+    git reset HEAD index.js//çalışma dizinindende geri almalıyız
+
+//Versiyon Değiştirme
+    versiyon1>versiyon2>versiyon3>versiyon2 kopya
+    . mutlaka koy->projemdeki tüm dosyaları eski haline getir
+    dosya ismi yazarsak sadece o dosyayı
+
+    git checkout <hashcode-versionkimlik> -- .
+    //commit et
+
+//Github
+    Git->versiyon kontrol sistemi
+    Github->git projeleriyle entegre olmuş bir depolama aracı
+        Kodlarımızı uzak bir bilgisayarda tutup git işlemlerimizi 
+            burada yaparız.
+        Projemizi dünyanın herhangi bir yerindeki insanlara tanıtabiliriz.
+
+        New Repository==>git-dersleri
+
+//GitHub'a Proje Gönderme (push)
+    //proje bağlantısını ekle-bağlantının takma adı-adres
+    git remote add githubRepo https://git...
+    git remote//bağlantı eklendimi kontrol
+    git push -u githubRepo master//projeyi githuba gönderme u(hepsini gönder)
+    //master->bu git projesinin anadalı
+    //username ve şifre yaz
+
+    //dosya5i sil git rm dosya5.txt
+    //git commit -m "dosyasilindi"
+    //git push -u githubRepo master
+    //kullanıcıadı ve şifre
+
+//.gitignore
+    git tarafından takip edilmesini istemediğimiz dosyalar
+    açık kaynak kodlu proje paylaşıyoruz ancak veritabanı dosyalarının gönderilmesini istemiyoruz.
+    cat >> .gitignore dosya oluştur
+    veritabani
+    cat .gitignore
+    git status
+
+    //touch dosya[1..5].html
+    gedit .gitignore//dosyayı açık
+        belgeler/*
+        !belgeler/dosya1.html//Bunu dahil etme
+
+//Branches (Dallar)
+    git projemizin bir kopyası
+    masterdan bir kopya alırsak yeni bir dal oluştururuz.
+    takım arkadaşlarımıza bir dal oluştururuz herkesin
+    ayrı ayrı geliştirdiği projeler master dalına gönderilir
+    master
+    yandal//değişiklik yap-sadece burda
+
+    merge(birleştirme)->brancehes->all branches
+        ->new pull request->create pull request
+        ->merge pull request->confirm merge
+
+    console
+        githubdan dosyaları çek,
+            git pull
+            git branch//mevcut dal
+            git branch --all//tüm dallar
+            git branch yandal2//yeni dal oluştur
+            git branch
+            git checkout yandal2//diğer dala geç
+            //yandalda dosya oluştur ve commit et
+            git add .
+            git commit ...
+            git checkout master//mastera geç
+            git diff master yandal2//2si arasındaki farklılıklar
+            git merge yandal2//2 dalı birleştir-masterdayken
+            git push -u githubRepo master
+            //kullanıcı adı ve şifre
+
+//Readme.md->quoting code help.github
+    //açıklama kısmı
+    #baslik
+    ##altbaslik
+    **kalin kelime**
+    *italik*
+    satır arası boşluk <br/>
+    git status//kod
+    [Google Linki](http://www.google.com)//link verme
+    ![Banner resmi][resim adresi]
+
+//GitHub Watch, Star ve Fork
+
+//GitHub Issues (Problemler)
+
+
+//GitHub Yararlı Linkler
+awesome-
+
+//Gitlab
+
+
+*/
